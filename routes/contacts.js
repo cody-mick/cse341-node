@@ -1,31 +1,21 @@
-const {MongoClient} = require('mongodb');
-const dotenv = require('dotenv');
+const routes = require('express').Router();
 
-async function main() {
+routes.get('/', (req, res) => {
+
+    const dotenv = require("dotenv");
     dotenv.config();
+    
+    const MongoClient = require('mongodb').MongoClient;
+    MongoClient.connect(process.env.MONGODB_URI, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("database01");
+        dbo.collection("contacts").find().toArray(function(err, result) {
+            if (err) throw err;
+            res.json(result);
+            db.close();
+        });
+    }); 
 
-    const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}*@cluster0.hkyld.mongodb.net/database01?retryWrites=true&w=majority`
+  });
 
-    const client = new MongoClient(uri);
-
-    try {
-        await client.connect();
-
-        await listDatabases(client);
-    } catch(e) {
-        console.error(e);
-    } finally {
-        await client.close();
-    }
-}
-
-async function listDatabases(client){
-    databasesList = await client.db().admin().listDatabases();
-
-    console.log("Databases:");
-    databasesList.databases.forEach(db => 
-        console.log(` - ${db.name}`)
-    );
-}
-
-main().catch(console.error);
+module.exports = routes;
