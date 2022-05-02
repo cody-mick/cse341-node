@@ -1,0 +1,13 @@
+GET http://localhost:3000/contacts
+
+###
+
+GET http://localhost:3000/contacts/626980467c95bf8ec01ff617
+
+###
+
+GET https://stormy-dawn-53463.herokuapp.com/contacts
+
+###
+
+GET https://stormy-dawn-53463.herokuapp.com/contacts/626980467c95bf8ec01ff617
