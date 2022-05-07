@@ -52,7 +52,7 @@ Content-Type: application/json
 }
 
 ### PUT existing contact
-PUT https://stormy-dawn-53463.herokuapp.com/contacts/6276c9d01b8037d3639a0c87 HTTP/1.1
+PUT https://stormy-dawn-53463.herokuapp.com/contacts/6276cfc8c63c80dd9b76b561 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -64,5 +64,5 @@ Content-Type: application/json
 }
 
 ### DELETE a contact by ID
-DELETE https://stormy-dawn-53463.herokuapp.com/contacts/6276c9d01b8037d3639a0c87 HTTP/1.1
+DELETE https://stormy-dawn-53463.herokuapp.com/contacts/6276cfc8c63c80dd9b76b561 HTTP/1.1
 Content-Type: application/json
