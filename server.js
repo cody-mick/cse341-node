@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 const connect = require("./db/connect");
-const cors = require("cors");
+// const cors = require("cors");
 
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./swagger.json");
@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 
 // configure body parser
 let bodyParser = require("body-parser");
-app.use(bodyParser.json()).use(cors());
+app.use(bodyParser.json());
 
 connect.initDatabase();
 
