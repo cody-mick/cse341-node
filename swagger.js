@@ -2,7 +2,7 @@ const swaggerAutogen = require("swagger-autogen")();
 
 const doc = {
   info: {
-    title: "My API",
+    title: "Contacts API",
     description: "Contacts API",
   },
   host: "stormy-dawn-53463.herokuapp.com",
