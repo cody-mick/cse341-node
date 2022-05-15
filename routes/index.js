@@ -4,7 +4,6 @@ routes.get("/", (req, res) => {
   res.send("Cody Mickelsen");
 });
 
-routes.use("/", require("./swagger"));
 routes.use("/contacts", require("./contacts"));
 
 module.exports = routes;
