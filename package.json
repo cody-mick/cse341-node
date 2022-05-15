@@ -29,6 +29,7 @@
     "swagger-ui-express": "^4.4.0"
   },
   "devDependencies": {
+    "cors": "^2.8.5",
     "eslint": "^8.14.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
